@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Drum Kit</title>
+  </head>
+
+  <body>
+    <!-- <h1>Drum Kit</h1> -->
+    <div class="kit">
+      <div class="left-side">
+        <div data-key="82" class="drum special-color" id="crash-cymbal">
+          <span class="key">R</span><span class="description">Crash</span>
+        </div>
+        <div data-key="84" class="drum default-color" id="high-tom">
+          <span class="key">T</span>
+          <span class="description">High Tom</span>
+        </div>
+        <div data-key="68" class="drum special-color" id="high-hats">
+          <span class="key">D</span>
+          <span class="description">High Hats</span>
+        </div>
+        <div data-key="70" class="drum default-color" id="snare-drum">
+          <span class="key">F</span>
+          <span class="description">Snare</span>
+        </div>
+      </div>
+      <div class="right-side">
+        <div data-key="85" class="drum default-color" id="mid-tom">
+          <span class="key">U</span>
+          <span class="description">Mid Tom</span>
+        </div>
+        <div data-key="73" class="drum special-color" id="ride-cymbal">
+          <span class="key">I </span>
+          <span class="description">Ride</span>
+        </div>
+        <div data-key="32" class="drum" id="bass">
+          <span class="key">SPACE</span>
+        </div>
+        <div data-key="74" class="drum default-color" id="low-tom">
+          <span class="key">J</span>
+          <span class="description">Low Tom</span>
+        </div>
+      </div>
+    </div>
+
+    <audio data-key="32" src="sounds/Bass.mp3"></audio>
+    <audio data-key="82" src="sounds/Crash-Cymbal.mp3"></audio>
+    <audio data-key="74" src="sounds/Floor-Tom.mp3"></audio>
+    <audio data-key="68" src="sounds/Hi-Hat.mp3"></audio>
+    <audio data-key="84" src="sounds/High-Tom.mp3"></audio>
+    <audio data-key="85" src="sounds/Medium-Tom.mp3"></audio>
+    <audio data-key="73" src="sounds/Ride-Cymbal.mp3"></audio>
+    <audio data-key="70" src="sounds/Snare-Drum.mp3"></audio>
+
+    <script>
+      const playDrum = (e) => {
+        const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+        if (!audio) return;
+        audio.currentTime = 0.1;
+        audio.play();
+
+        const drumEl = document.querySelector(`div[data-key="${e.keyCode}"]`);
+        drumEl.classList.add("active");
+        const activeDuration = drumEl.classList.contains("special-color")
+          ? 150
+          : 50;
+        setTimeout((activeDuration) => {
+          drumEl.classList.remove("active");
+        }, activeDuration);
+      };
+
+      window.addEventListener("keydown", playDrum);
+    </script>
+  </body>
+</html>

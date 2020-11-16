@@ -1,0 +1,156 @@
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(./background.jpg);
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  z-index: -99;
+}
+
+.kit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 100px;
+}
+
+.kit .left-side,
+.kit .right-side {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  height: 300px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: relative;
+}
+
+.kit .drum {
+  border-radius: 50%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: 0.05s;
+  transition: 0.05s;
+}
+
+.kit .drum .key {
+  font-size: 1.5em;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+  -webkit-animation: shake 0.5s 1;
+          animation: shake 0.5s 1;
+}
+
+.kit .drum .description {
+  font-size: smaller;
+}
+
+.kit .left-side #high-hats {
+  z-index: 1;
+  height: 100px;
+  width: 100px;
+  margin-top: -20px;
+}
+
+.kit .left-side #snare-drum {
+  width: 140px;
+  height: 140px;
+  margin-left: -20px;
+}
+
+.kit .left-side #high-tom {
+  width: 100px;
+  height: 100px;
+  margin-left: -30px;
+  margin-top: 70px;
+}
+
+.kit .left-side #crash-cymbal {
+  width: 150px;
+  height: 150px;
+  z-index: 1;
+  margin-left: 40px;
+}
+
+.kit .right-side {
+  width: 350px;
+}
+
+.kit .right-side #mid-tom {
+  width: 140px;
+  height: 140px;
+  margin-top: 80px;
+  margin-right: -50px;
+  margin-left: 50px;
+}
+
+.kit .right-side #ride-cymbal {
+  width: 170px;
+  height: 170px;
+  z-index: 1;
+  margin-top: 40px;
+}
+
+.kit .right-side #bass {
+  position: absolute;
+  border-radius: 0;
+  height: 150px;
+  width: 250px;
+  top: 20%;
+  left: -120px;
+  background-color: #8b0000;
+  z-index: -1;
+  border-radius: 5px;
+}
+
+.kit .right-side #low-tom {
+  width: 150px;
+  height: 150px;
+  margin-left: 40%;
+  margin-top: -30px;
+}
+
+.kit .special-color {
+  background: radial-gradient(circle, #faff00 3%, #ff9d00 50%, black 100%);
+}
+
+.kit .default-color {
+  background-color: #ebebeb;
+  -webkit-box-shadow: 0px 0px 0px 3px #000000, inset 0px 10px 27px -8px #000000, inset 0px -10px 27px -8px #a31925, inset 0px 0px 22px 11px rgba(0, 0, 0, 0);
+  box-shadow: 0px 0px 0px 5px #504837, inset 0px 10px 27px -8px #141414, inset 0px -10px 27px -8px #a31925, inset 0px 0px 22px 11px rgba(0, 0, 0, 0);
+}
+
+.kit .active {
+  -webkit-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 0px 0px 3px 4px rgba(0, 0, 0, 0.47);
+  box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 0px 0px 3px 4px rgba(0, 0, 0, 0.47);
+}
+/*# sourceMappingURL=style.css.map */
